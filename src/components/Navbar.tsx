@@ -27,7 +27,7 @@ export default function Navbar() {
               href="#proyectos"
               className="text-dark hover:text-primary transition-colors font-medium"
             >
-              Proyectos
+              Trabajos
             </a>
             <a
               href="#tecnologias"

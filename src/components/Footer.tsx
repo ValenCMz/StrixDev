@@ -1,5 +1,6 @@
 import { Instagram } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import Logo from "@/assets/logo.png";
 
 const footerLinks = [
   { href: "#inicio", label: "Inicio" },
@@ -17,29 +18,7 @@ export function Footer() {
           {/* Logo & Tagline */}
           <div className="space-y-4">
             <div className="flex items-center gap-2">
-              <svg
-                width="32"
-                height="32"
-                viewBox="0 0 100 100"
-                fill="none"
-                xmlns="http://www.w3.org/2000/svg"
-                className="text-background"
-              >
-                <path
-                  d="M50 10L20 35V55L50 80L80 55V35L50 10Z"
-                  fill="currentColor"
-                  fillOpacity="0.2"
-                />
-                <path
-                  d="M50 15L25 37V53L50 75L75 53V37L50 15Z"
-                  stroke="currentColor"
-                  strokeWidth="2"
-                  fill="none"
-                />
-                <circle cx="38" cy="42" r="6" fill="#67E8F9" />
-                <circle cx="62" cy="42" r="6" fill="#67E8F9" />
-                <path d="M50 52L44 46H56L50 52Z" fill="currentColor" />
-              </svg>
+              <img src={Logo} alt="Logo" className="w-10 h-10 text-primary" />
               <span className="font-serif text-xl text-background">
                 StrixDev
               </span>
@@ -66,7 +45,7 @@ export function Footer() {
           {/* Social & CTA */}
           <div className="flex items-center gap-4 md:justify-end">
             <a
-              href="https://instagram.com"
+              href="https://www.instagram.com/strix_dev/"
               target="_blank"
               rel="noopener noreferrer"
               className="w-10 h-10 rounded-full bg-background/10 flex items-center justify-center hover:bg-background/20 transition-colors"

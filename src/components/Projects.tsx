@@ -1,36 +1,60 @@
+import salasimg from "@/assets/projects/salas.png";
+import cgaimg from "@/assets/projects/cga.png";
+import youtubeRojo from "@/assets/icons/youtube-rojo.svg";
+import { useState } from "react";
+
 const projects = [
   {
-    name: "Sistema de Gestión Empresarial",
+    name: "Sistema de Gestión de Stock Animal",
     description:
-      "Plataforma completa para gestión de turnos, personal y clientes con panel de administración.",
+      "Sistema de gestión para control de stock animal y reportes médicos, enfocado en evitar olvidos de carga de datos.",
     category: "Sistema",
     gradient: "from-primary/20 to-secondary/20",
+    image: salasimg,
+    url: "rYUH2OcRMlk",
   },
   {
-    name: "E-commerce de Moda",
+    name: "Estudio CGA – Gestión de Casos y Documentos",
     description:
-      "Tienda online con catálogo de productos, carrito de compras y pasarela de pagos integrada.",
-    category: "Ecommerce",
+      "Desarrollo de una web para un estudio jurídico y un sistema interno para la gestión de casos, clientes y documentos, con acceso diferenciado por roles.",
+    category: "Web y sistema de gestión",
     gradient: "from-secondary/20 to-light-violet",
+    image: cgaimg,
+    url: "zxMMSZWPzDI",
   },
-  {
-    name: "Automatización de Marketing",
-    description:
-      "Sistema de automatización de leads con integración a WhatsApp, email y CRM.",
-    category: "Automatización",
-    gradient: "from-light-violet to-primary/20",
-  },
+  // {
+  //   name: "Automatización de Marketing",
+  //   description:
+  //     "Sistema de automatización de leads con integración a WhatsApp, email y CRM.",
+  //   category: "Automatización",
+  //   gradient: "from-light-violet to-primary/20",
+  //   image: salasimg,
+  //   url: "https://youtu.be/rYUH2OcRMlk",
+  // },
 ];
 
 export default function Projects() {
+  const [isModalOpen, setIsModalOpen] = useState(false);
+  const [activeYoutubeId, setActiveYoutubeId] = useState<string | null>(null);
+
+  const handleYoutubeClick = (youtubeId: string) => {
+    setActiveYoutubeId(youtubeId);
+    setIsModalOpen(true);
+  };
+
+  const handleModalClose = () => {
+    setIsModalOpen(false);
+    setActiveYoutubeId(null);
+  };
+
   return (
-    <section id="proyectos" className="py-24 px-6 bg-white">
+    <section id="proyectos" className="py-24 px-6 bg-white scroll-mt-24">
       <div className="max-w-7xl mx-auto">
-        <h2 className="text-4xl md:text-5xl font-serif font-bold text-dark text-center mb-16">
-          Proyectos
+        <h2 className="text-3xl sm:text-4xl Plus Jakarta Sans text-dark text-center mb-10">
+          Trabajos
         </h2>
 
-        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-5xl mx-auto">
           {projects.map((project, index) => (
             <div
               key={index}
@@ -39,10 +63,35 @@ export default function Projects() {
               <div
                 className={`h-48 bg-gradient-to-br ${project.gradient} flex items-center justify-center relative overflow-hidden`}
               >
-                <div className="absolute inset-0 bg-white/0 group-hover:bg-white/10 transition-colors duration-300"></div>
-                <div className="text-6xl font-serif font-bold text-primary/20 group-hover:text-primary/30 transition-colors">
-                  0{index + 1}
+                <div className="absolute inset-0 bg-white/0 group-hover:bg-white/10 transition-colors duration-300 flex items-center justify-center">
+                  <button
+                    type="button"
+                    className="z-10 flex items-center justify-center"
+                    style={{
+                      position: "absolute",
+                      top: "50%",
+                      left: "50%",
+                      transform: "translate(-50%, -50%)",
+                    }}
+                    onClick={(e) => {
+                      e.stopPropagation();
+                      handleYoutubeClick(project.url);
+                    }}
+                  >
+                    <img
+                      src={youtubeRojo}
+                      alt=""
+                      className="h-20 w-20 opacity-0 group-hover:opacity-100 transition-opacity duration-200"
+                    />
+                  </button>
                 </div>
+
+                <div className="w-full h-full absolute inset-0 bg-black opacity-30 pointer-events-none" />
+                <img
+                  src={project.image}
+                  alt={project.name}
+                  className="w-full h-full object-cover"
+                />
               </div>
 
               <div className="p-6 space-y-3">
@@ -62,6 +111,25 @@ export default function Projects() {
           ))}
         </div>
       </div>
+      {isModalOpen && activeYoutubeId && (
+        <div
+          className="fixed inset-0 z-50 bg-black/70 flex items-center justify-center p-4"
+          onClick={handleModalClose}
+        >
+          <div
+            className="w-full max-w-4xl aspect-video bg-black rounded-xl overflow-hidden"
+            onClick={(e) => e.stopPropagation()}
+          >
+            <iframe
+              className="w-full h-full"
+              src={`https://www.youtube-nocookie.com/embed/${activeYoutubeId}?autoplay=1`}
+              title="YouTube video player"
+              allow="autoplay; encrypted-media; picture-in-picture"
+              allowFullScreen
+            />
+          </div>
+        </div>
+      )}
     </section>
   );
 }

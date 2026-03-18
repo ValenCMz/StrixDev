@@ -1,20 +1,19 @@
 import { motion } from "framer-motion";
-import { Zap } from "lucide-react";
+// import { Zap } from "lucide-react";
+// import hero from "@/assets/hero-pantalla.png";
+import image from "@/assets/hero-pantalla.png";
 
 const Hero = () => (
   <section
     id="inicio"
-    className="pt-32 pb-20 px-6 min-h-screen flex items-center bg-background"
+    className="pt-32 pb-20 min-h-screen flex items-center bg-background"
   >
-    <div className="max-w-7xl mx-auto grid lg:grid-cols-2 gap-16 items-center w-full">
+    <div className="max-w-7xl px-6 mx-auto grid lg:grid-cols-2 gap-16 items-center w-full">
       <motion.div
         initial={{ opacity: 0, x: -20 }}
         animate={{ opacity: 1, x: 0 }}
         transition={{ duration: 0.8, ease: [0.22, 1, 0.36, 1] }}
       >
-        <span className="inline-block px-4 py-1.5 rounded-full bg-accent text-primary text-sm font-bold mb-6">
-          Desarrollo web & automatización
-        </span>
         <h1 className="text-5xl md:text-7xl text-foreground mb-8 leading-[1.1] tracking-tight">
           Transformamos ideas en <span className="text-primary">productos</span>{" "}
           digitales
@@ -28,7 +27,7 @@ const Hero = () => (
             href="#proyectos"
             whileHover={{ y: -2 }}
             whileTap={{ scale: 0.98 }}
-            className="px-8 py-3 rounded-full bg-primary text-primary-foreground font-semibold shadow-lg shadow-primary/20 hover:bg-violet-glow transition-colors duration-300"
+            className="px-8 py-3 rounded-full bg-primary text-white font-semibold shadow-lg shadow-primary/20 hover:bg-violet-glow transition-colors duration-300"
           >
             Ver proyectos
           </motion.a>
@@ -43,7 +42,7 @@ const Hero = () => (
         </div>
       </motion.div>
 
-      <motion.div
+      {/* <motion.div
         initial={{ opacity: 0, scale: 0.9 }}
         animate={{ opacity: 1, scale: 1 }}
         transition={{ duration: 1, delay: 0.3, ease: [0.22, 1, 0.36, 1] }}
@@ -64,7 +63,16 @@ const Hero = () => (
             <Zap size={64} className="text-primary fill-primary/10" />
           </div>
         </div>
-      </motion.div>
+      </motion.div> */}
+      <div className="w-full h-full object-cover lg:scale-150">
+        {" "}
+        {/* Agranda 10% */}
+        <img
+          src={image}
+          alt="Hero Image"
+          className="w-full h-full object-cover"
+        />
+      </div>
     </div>
   </section>
 );
