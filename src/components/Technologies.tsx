@@ -56,7 +56,7 @@ export function Technologies() {
                 <div
                     className="flex w-max"
                     style={{
-                        animation: "scroll-infinite 40s linear infinite",
+                        animation: "scroll-infinite 55s linear infinite",
                     }}
                 >
                     {/* Renderizás 4 copias para que nunca se vea el salto */}

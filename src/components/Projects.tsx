@@ -51,7 +51,7 @@ export default function Projects() {
     <section id="proyectos" className="py-24 px-6 bg-white scroll-mt-24">
       <div className="max-w-7xl mx-auto">
         <h2 className="text-3xl sm:text-4xl Plus Jakarta Sans text-dark text-center mb-10">
-          Trabajos
+          Nuestros Trabajos
         </h2>
 
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-5xl mx-auto">
