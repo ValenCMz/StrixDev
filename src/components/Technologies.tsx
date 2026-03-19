@@ -1,29 +1,47 @@
+import { FaJava } from "react-icons/fa";
+
+import {
+    SiReact,
+    SiNextdotjs,
+    SiTypescript,
+    SiTailwindcss,
+    SiDocker,
+    SiSpringboot,
+    SiN8N,
+    SiAngular,
+    SiLaravel,
+    SiPhp,
+    SiJavascript,
+    SiFigma,
+    SiVite,
+} from "react-icons/si";
+
 const technologies = [
-  { name: "React", icon: "⚛️" },
-  { name: "Next.js", icon: "▲" },
-  { name: "TypeScript", icon: "TS" },
-  { name: "Tailwind CSS", icon: "🌊" },
-  { name: "Docker", icon: "🐳" },
-  { name: "Java", icon: "☕" },
-  { name: "Spring Boot", icon: "🍃" },
-  { name: "n8n", icon: "⚡" },
-  { name: "Angular", icon: "🅰️" },
-  { name: "Laravel", icon: "🔺" },
-  { name: "PHP", icon: "🐘" },
-  { name: "JavaScript", icon: "JS" },
-  { name: "Figma", icon: "🎨" },
-  { name: "Vite", icon: "⚡" },
+  { name: "React", icon: <SiReact color="#61DAFB" size={28} /> },
+  { name: "Next.js", icon: <SiNextdotjs size={28} /> },
+  { name: "TypeScript", icon: <SiTypescript color="#3178C6" size={28} /> },
+  { name: "Tailwind CSS", icon: <SiTailwindcss color="#06B6D4" size={28} /> },
+  { name: "Docker",  icon: <SiDocker color="#2496ED" size={28} /> },
+  { name: "Java", icon: <FaJava color="#ED8B00" size={28} /> },
+  { name: "Spring Boot",icon: <SiSpringboot color="#6DB33F" size={28} /> },
+  { name: "n8n", icon: <SiN8N size={28} /> },
+  { name: "Angular", icon: <SiAngular color="#DD0031" size={28} /> },
+  { name: "Laravel", icon: <SiLaravel color="#FF2D20" size={28} /> },
+  { name: "PHP", icon: <SiPhp color="#777BB4" size={28} /> },
+  { name: "JavaScript", icon: <SiJavascript color="#F7DF1E" size={28} /> },
+  { name: "Figma", icon: <SiFigma color="#F24E1E" size={28} /> },
+  { name: "Vite", icon: <SiVite color="#646CFF" size={28} /> },
 ];
 
 export function Technologies() {
   return (
     <section
       id="tecnologias"
-      className="py-20 bg-secondary/30 overflow-hidden scroll-mt-24"
+      className="py-20 bg-[#F4F6FF] overflow-hidden scroll-mt-24 "
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-12">
-          <h2 className="font-serif text-3xl sm:text-4xl text-foreground mb-4">
+          <h2 className="Plus Jakarta Sans text-3xl sm:text-4xl text-foreground mb-4">
             Tecnologías que usamos
           </h2>
           <p className="text-muted-foreground max-w-2xl mx-auto">
@@ -42,12 +60,9 @@ export function Technologies() {
               key={tech.name}
               className="flex-shrink-0 mx-6 px-6 py-4 bg-card rounded-xl border border-border shadow-sm hover:shadow-md transition-shadow"
             >
-              <div className="flex items-center gap-3">
-                <span className="text-2xl">{tech.icon}</span>
-                <span className="text-foreground font-medium whitespace-nowrap">
-                  {tech.name}
-                </span>
-              </div>
+                <div className="flex items-center gap-3">
+                    {tech.icon}  {/* antes era <span className="text-2xl">{tech.icon}</span> */}
+                </div>
             </div>
           ))}
           {/* Duplicate for seamless loop */}
@@ -58,9 +73,8 @@ export function Technologies() {
             >
               <div className="flex items-center gap-3">
                 <span className="text-2xl">{tech.icon}</span>
-                <span className="text-foreground font-medium whitespace-nowrap">
-                  {tech.name}
-                </span>
+
+
               </div>
             </div>
           ))}

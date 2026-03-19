@@ -24,7 +24,7 @@ export default function WhoWeAre() {
       {/* <div className="absolute bottom-0 left-0 w-96 h-96 bg-secondary/20 rounded-full blur-3xl -z-0"></div> */}
 
       <div className="max-w-5xl mx-auto relative z-10">
-        <h2 className="text-4xl md:text-5xl font-serif font-bold text-dark text-center mb-8">
+        <h2 className="text-4xl md:text-5xl Plus Jakarta Sans font-bold text-dark text-center mb-8">
           Quiénes Somos
         </h2>
 
