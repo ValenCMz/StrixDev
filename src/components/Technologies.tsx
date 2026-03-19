@@ -59,7 +59,7 @@ export function Technologies() {
                         animation: "scroll-infinite 55s linear infinite",
                     }}
                 >
-                    {/* Renderizás 4 copias para que nunca se vea el salto */}
+                    {/* Se renderizan 4 copias para que nunca se vea el salto */}
                     {[...Array(4)].flatMap((_, i) =>
                         technologies.map((tech) => (
                             <div
