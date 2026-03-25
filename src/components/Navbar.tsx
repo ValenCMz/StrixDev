@@ -7,7 +7,7 @@ export default function Navbar() {
         <div className="flex items-center justify-between">
           <a href="#inicio" className="flex items-center gap-2">
             <img src={Logo} alt="Logo" className="w-20 h-20 text-primary" />
-            <span className="text-xl font-bold text-dark">StrixDev</span>
+            <span className="text-xl font-bold text-dark">StrixCore</span>
           </a>
 
           <div className="hidden md:flex items-center gap-8">
@@ -24,7 +24,7 @@ export default function Navbar() {
               Servicios
             </a>
             <a
-              href="#proyectos"
+              href="#trabajos"
               className="text-dark hover:text-primary transition-colors font-medium"
             >
               Trabajos
@@ -44,7 +44,7 @@ export default function Navbar() {
           </div>
 
           <a
-            href="#contacto"
+            href="mailto:strixcore1@gmail.com?subject=Consulta%20desde%20StrixCore&body=Hola%20StrixCore%2C%20quiero%20mas%20informacion."
             className="bg-primary text-white px-6 py-2.5 rounded-full font-semibold hover:bg-secondary transition-all duration-300 hover:shadow-lg hover:scale-105"
           >
             Contactanos

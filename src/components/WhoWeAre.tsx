@@ -30,7 +30,7 @@ export default function WhoWeAre() {
 
         <p className="text-center text-lg text-gray-600 leading-relaxed max-w-3xl mx-auto mb-16">
           Creamos software y automatizaciones que hacen que los negocios
-          funcionen mejor. En Strix Dev nos enfocamos en resolver problemas
+          funcionen mejor. En Strix Core nos enfocamos en resolver problemas
           reales: desde sistemas de gestión hasta integraciones y procesos
           automatizados que ahorran tiempo y mejoran resultados. Nuestro
           objetivo no es solo desarrollar, sino aportar soluciones que impulsen

@@ -1,7 +1,7 @@
 import { motion } from "framer-motion";
 // import { Zap } from "lucide-react";
 // import hero from "@/assets/hero-pantalla.png";
-import image from "@/assets/hero-pantalla.png";
+import image from "@/assets/Eseste.png";
 
 const Hero = () => (
   <section
@@ -24,15 +24,16 @@ const Hero = () => (
         </p>
         <div className="flex flex-wrap gap-4">
           <motion.a
-            href="#proyectos"
+            href="#trabajos"
             whileHover={{ y: -2 }}
             whileTap={{ scale: 0.98 }}
             className="px-8 py-3 rounded-full bg-primary text-white font-semibold shadow-lg shadow-primary/20 hover:bg-violet-glow transition-colors duration-300"
           >
-            Ver proyectos
+            Ver nuestros trabajos
           </motion.a>
           <motion.a
-            href="#contacto"
+            href="mailto:strixcore1@gmail.com?subject=Consulta%20desde%20StrixCore&body=Hola%20StrixCore%2C%20quiero%20mas%20informacion.
+"
             whileHover={{ y: -2 }}
             whileTap={{ scale: 0.98 }}
             className="px-8 py-3 rounded-full border-2 border-primary text-primary font-semibold hover:bg-accent/30 transition-colors duration-300"
@@ -65,7 +66,9 @@ const Hero = () => (
         </div>
       </motion.div> */}
       <div className="w-full h-full object-cover lg:scale-150">
-        {" "}
+        {/* <div className="absolute -inset-6 rounded-[3rem] bg-gradient-to-br from-primary/40 via-secondary/30 to-transparent blur-3xl opacity-80" /> */}
+        <div className="absolute -bottom-10 -right-10 h-72 w-72 rounded-full bg-primary/30 blur-3xl" />
+
         {/* Agranda 10% */}
         <img
           src={image}

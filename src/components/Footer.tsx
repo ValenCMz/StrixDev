@@ -1,11 +1,10 @@
 import { Instagram } from "lucide-react";
-import { Button } from "@/components/ui/button";
 import Logo from "@/assets/logo.png";
 
 const footerLinks = [
   { href: "#inicio", label: "Inicio" },
   { href: "#servicios", label: "Servicios" },
-  { href: "#proyectos", label: "Proyectos" },
+  { href: "#trabajos", label: "Trabajos" },
   { href: "#tecnologias", label: "Tecnologías" },
   { href: "#nosotros", label: "Nosotros" },
 ];
@@ -18,9 +17,15 @@ export function Footer() {
           {/* Logo & Tagline */}
           <div className="space-y-4">
             <div className="flex items-center gap-2">
-              <img src={Logo} alt="Logo" className="w-10 h-10 text-primary" />
+              <div className="w-12 h-12 rounded-full bg-white flex items-center justify-center shadow-lg flex">
+                <img
+                  src={Logo}
+                  alt="Logo"
+                  className="w-10 h-10 text-primary  "
+                />
+              </div>
               <span className="font-serif text-xl text-background">
-                StrixDev
+                StrixCore
               </span>
             </div>
             <p className="text-background/70 text-sm max-w-xs">
@@ -53,16 +58,19 @@ export function Footer() {
             >
               <Instagram className="w-5 h-5 text-background" />
             </a>
-            <Button className="bg-primary text-white px-6 py-2.5 rounded-full font-semibold hover:bg-secondary transition-all duration-300 hover:shadow-lg hover:scale-105">
+            <a
+              href="mailto:strixcore1@gmail.com?subject=Consulta%20desde%20StrixCore&body=Hola%20StrixCore%2C%20quiero%20mas%20informacion."
+              className="bg-primary text-white px-6 py-2.5 rounded-full font-semibold hover:bg-secondary transition-all duration-300 hover:shadow-lg hover:scale-105"
+            >
               Contactanos
-            </Button>
+            </a>
           </div>
         </div>
 
         {/* Copyright */}
         <div className="mt-12 pt-6 border-t border-background/10">
           <p className="text-center text-sm text-background/50">
-            © {new Date().getFullYear()} StrixDev. Todos los derechos
+            © {new Date().getFullYear()} StrixCore. Todos los derechos
             reservados.
           </p>
         </div>

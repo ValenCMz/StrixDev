@@ -48,7 +48,7 @@ export default function Projects() {
   };
 
   return (
-    <section id="proyectos" className="py-24 px-6 bg-white scroll-mt-24">
+    <section id="trabajos" className="py-24 px-6 bg-white scroll-mt-24">
       <div className="max-w-7xl mx-auto">
         <h2 className="text-3xl sm:text-4xl Plus Jakarta Sans text-dark text-center mb-10">
           Nuestros Trabajos
