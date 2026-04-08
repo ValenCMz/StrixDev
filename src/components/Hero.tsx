@@ -2,6 +2,7 @@ import { motion } from "framer-motion";
 // import { Zap } from "lucide-react";
 // import hero from "@/assets/hero-pantalla.png";
 import image from "@/assets/Eseste.png";
+import { handleSectionNavClick } from "@/lib/scrollToSection";
 
 const Hero = () => (
   <section
@@ -24,7 +25,8 @@ const Hero = () => (
         </p>
         <div className="flex flex-wrap gap-4">
           <motion.a
-            href="#trabajos"
+            href="#/"
+            onClick={(e) => handleSectionNavClick(e, "trabajos")}
             whileHover={{ y: -2 }}
             whileTap={{ scale: 0.98 }}
             className="px-8 py-3 rounded-full bg-primary text-white font-semibold shadow-lg shadow-primary/20 hover:bg-violet-glow transition-colors duration-300"
@@ -43,39 +45,25 @@ const Hero = () => (
         </div>
       </motion.div>
 
-      {/* <motion.div
-        initial={{ opacity: 0, scale: 0.9 }}
-        animate={{ opacity: 1, scale: 1 }}
-        transition={{ duration: 1, delay: 0.3, ease: [0.22, 1, 0.36, 1] }}
-        className="relative flex justify-center items-center"
+      <motion.div
+        initial={{ opacity: 0, x: 20 }}
+        animate={{ opacity: 1, x: 0 }}
+        transition={{ duration: 0.8, ease: [0.22, 1, 0.36, 1] }}
+        className="relative flex w-full justify-center lg:justify-end"
       >
-        <motion.div
-          animate={{ rotate: 360 }}
-          transition={{ duration: 50, repeat: Infinity, ease: "linear" }}
-          className="absolute w-[400px] h-[400px] md:w-[500px] md:h-[500px] border border-border rounded-full"
+        {/* Mancha decorativa: anclada a la columna (como antes), no a la caja de la imagen */}
+        <div
+          aria-hidden
+          className="pointer-events-none absolute z-0 -bottom-10 -right-10 h-72 w-72 rounded-full bg-primary/30 blur-3xl"
         />
-        <motion.div
-          animate={{ rotate: -360 }}
-          transition={{ duration: 30, repeat: Infinity, ease: "linear" }}
-          className="absolute w-[300px] h-[300px] md:w-[400px] md:h-[400px] border border-primary/20 rounded-full"
-        />
-        <div className="w-52 h-52 md:w-64 md:h-64 rounded-full bg-gradient-to-tr from-primary to-accent flex items-center justify-center shadow-violet-lg relative z-10">
-          <div className="w-44 h-44 md:w-56 md:h-56 rounded-full bg-background flex items-center justify-center">
-            <Zap size={64} className="text-primary fill-primary/10" />
-          </div>
+        <div className="relative z-10 w-full max-w-md sm:max-w-lg lg:max-w-xl xl:max-w-2xl">
+          <img
+            src={image}
+            alt="Ilustración StrixCore"
+            className="mx-auto block h-auto w-full max-h-[min(58vh,560px)] sm:max-h-[min(62vh,600px)] lg:max-h-[min(72vh,680px)] object-contain object-bottom"
+          />
         </div>
-      </motion.div> */}
-      <div className="w-full h-full object-cover lg:scale-150">
-        {/* <div className="absolute -inset-6 rounded-[3rem] bg-gradient-to-br from-primary/40 via-secondary/30 to-transparent blur-3xl opacity-80" /> */}
-        <div className="absolute -bottom-10 -right-10 h-72 w-72 rounded-full bg-primary/30 blur-3xl" />
-
-        {/* Agranda 10% */}
-        <img
-          src={image}
-          alt="Hero Image"
-          className="w-full h-full object-cover"
-        />
-      </div>
+      </motion.div>
     </div>
   </section>
 );

@@ -4,6 +4,7 @@ import path from "path";
 
 // https://vite.dev/config/
 export default defineConfig({
+  base: "/StrixCore/",
   plugins: [react()],
   resolve: {
     alias: {

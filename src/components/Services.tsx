@@ -31,7 +31,8 @@ const services = [
   {
     icon: ShoppingCart,
     title: "Ecommerce",
-    description: "Tiendas online optimizadas para vender más",
+    description:
+      "Tiendas online · Pagos · Integraciones · Automatización de ventas",
   },
 ];
 

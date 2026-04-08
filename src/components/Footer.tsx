@@ -1,12 +1,13 @@
 import { Instagram } from "lucide-react";
 import Logo from "@/assets/logo.png";
+import { handleSectionNavClick } from "@/lib/scrollToSection";
 
 const footerLinks = [
-  { href: "#inicio", label: "Inicio" },
-  { href: "#servicios", label: "Servicios" },
-  { href: "#trabajos", label: "Trabajos" },
-  { href: "#tecnologias", label: "Tecnologías" },
-  { href: "#nosotros", label: "Nosotros" },
+  { sectionId: "inicio", label: "Inicio" },
+  { sectionId: "servicios", label: "Servicios" },
+  { sectionId: "trabajos", label: "Trabajos" },
+  { sectionId: "tecnologias", label: "Tecnologías" },
+  { sectionId: "nosotros", label: "Nosotros" },
 ];
 
 export function Footer() {
@@ -38,8 +39,9 @@ export function Footer() {
           <div className="flex flex-wrap gap-x-6 gap-y-2 md:justify-center">
             {footerLinks.map((link) => (
               <a
-                key={link.href}
-                href={link.href}
+                key={link.sectionId}
+                href="#/"
+                onClick={(e) => handleSectionNavClick(e, link.sectionId)}
                 className="text-sm text-background/70 hover:text-background transition-colors"
               >
                 {link.label}
